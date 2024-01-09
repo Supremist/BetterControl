@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<bindings>
+    <mapping name="LeanLeft_Button" type="Button" >
+		<button id="IK_Q" />
+	</mapping>
+    <mapping name="LeanRight_Button" type="Button" >
+		<button id="IK_E" />
+	</mapping>
+
+    <context name="QuickMeleeContext">
+        <action name="QuickMelee" map="QuickMelee_Button" />
+    </context>
+    <context name="QuickMeleeAlternativeContext">
+        <action name="QuickMelee" map="QuickMelee_Button_Alternative" />
+    </context>
+
+    <context name="Aiming" append="true">
+        <exclude name="QuickMeleeContext" />
+        <exclude name="QuickMeleeAlternativeContext" />
+
+        <!-- Include Advanced Control mod actions -->
+        <action name="CET/Advanced Control/lean_left"  map="LeanLeft_Button" />
+        <action name="CET/Advanced Control/lean_right" map="LeanRight_Button" />
+    </context>
+</bindings>
